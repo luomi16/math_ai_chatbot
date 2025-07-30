@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #fafafa; }
+        .container { max-width: 500px; margin: auto; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 0 8px #ccc; }
+        .msg { margin-top: 10px; }
+        .user { color: #0a6; font-weight: bold; }
+        .assistant { color: #36c; }
+        input[type="text"] { width: 80%; padding: 8px; border-radius: 6px; border: 1px solid #bbb;}
+        button { padding: 8px 16px; border-radius: 6px; border: none; background: #3b7ddd; color: white; font-size: 16px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ask the Math Chatbot!</h2>
+        <form method="post">
+            <input type="text" name="user_input" placeholder="Enter your math question" autocomplete="off" required>
+            <button type="submit">Ask</button>
+        </form>
+        <div>
+        {% for msg in history %}
+            <div class="msg">
+                {% if msg.role == "user" %}
+                    <span class="user">You: </span>{{ msg.content }}
+                {% elif msg.role == "assistant" %}
+                    <span class="assistant">Assistant: </span>{{ msg.content }}
+                {% endif %}
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
