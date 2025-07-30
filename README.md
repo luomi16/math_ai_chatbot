@@ -5,6 +5,20 @@ All previous questions and answers are saved and displayed, creating a chat-like
 
 ---
 
+## Setup Instructions
+
+1. **Clone or Download This Project**
+
+git clone https://github.com/luomi16/math_ai_chatbot
+cd math_ai_chatbot-main
+
+2. **Install Required Python Packages**
+
+```
+pip install flask openai
+```
+
+
 ## Features
 
 - Ask any math question and get an instant answer.
